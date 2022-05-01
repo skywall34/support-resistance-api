@@ -16,7 +16,7 @@ class Stocks:
         plt.rcParams['figure.figsize'] = [12, 7]
         plt.rc('font', size=14)
 
-        # Algorithms to idientify the 4-candle fractals
+    # Algorithms to idientify the 4-candle fractals
     def _is_support(self, df, i):
         return df['Low'][i] < df['Low'][i-1]  and df['Low'][i] < df['Low'][i+1] and df['Low'][i+1] < df['Low'][i+2] and df['Low'][i-1] < df['Low'][i-2]
 

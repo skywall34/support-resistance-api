@@ -19,8 +19,6 @@ async def handle_df(ticket_name: str, start: str, end: str):
         </head>
         <body>
         <h2>Support Resistance Level:</h2>
-        <!-- You've to mark your data as safe,
-            otherwise it'll be rendered as a string -->
             {graph_image}
         </body>
     </html>

@@ -1,6 +1,6 @@
-fastapi
-matplotlib
-pandas
-numpy
-mplfinance
-yfinance
+fastapi==0.75.2
+matplotlib==3.5.1
+pandas==1.4.2
+numpy==1.22.3
+mplfinance==0.12.8b9
+yfinance==0.1.70
