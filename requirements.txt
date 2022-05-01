@@ -1,0 +1,6 @@
+fastapi
+matplotlib
+pandas
+numpy
+mplfinance
+yfinance
