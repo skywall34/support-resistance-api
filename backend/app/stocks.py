@@ -1,5 +1,6 @@
 #  Main class for getting stock data
 # https://towardsdatascience.com/detection-of-price-support-and-resistance-levels-in-python-baedc44c34c9
+from typing import List
 from matplotlib.figure import Figure
 import pandas as pd
 import numpy as np
@@ -9,6 +10,7 @@ import matplotlib.dates as mpl_dates
 import matplotlib.pyplot as plt
 import io
 import base64
+
 
 class Stocks:
 
@@ -41,7 +43,6 @@ class Stocks:
     def plot_by_stock(self, name: str, start: str, end: str) -> str:
         # Get the Daily Data of the ticker
         ticker = yfinance.Ticker(name)
-        # TODO: Add start, end arguments
         df = ticker.history(interval='1d',start=start, end=end)
 
         df['Date'] = pd.to_datetime(df.index)
@@ -73,5 +74,11 @@ class Stocks:
         # Encode the fig, return utf-8 encoded html
         encoded = self._fig_to_base64(fig)
         return '<img src="data:image/png;base64, {}">'.format(encoded.decode('utf-8'))
+
+    def list_tickers(limit: int = 100) -> List[int]:
+        file_location = "data/sp500.csv"
+
+        df = pd.read_csv(file_location)
+        return list(df['Symbol'])
 
     

@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# stock related or large file data
+data/
+
 # C extensions
 *.so
 
